@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Body / regular text -->
+    <dimen name="font_small">40sp</dimen>       <!-- small body text / hints -->
+    <dimen name="font_medium">50sp</dimen>      <!-- standard body text -->
+    <dimen name="font_large">60sp</dimen>       <!-- emphasized text / buttons -->
+
+    <!-- Titles / headings -->
+    <dimen name="title_small">60sp</dimen>      <!-- section headers -->
+    <dimen name="title_medium">70sp</dimen>     <!-- main screen titles -->
+    <dimen name="title_large">80sp</dimen>      <!-- prominent headers -->
+</resources>
+
+

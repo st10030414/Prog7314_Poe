@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/lock_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1B1F24"
+    android:animateLayoutChanges="true"
+    android:padding="24dp">
+
+    <!-- Centered lock splash -->
+    <LinearLayout
+        android:id="@+id/group_lock_splash"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/lock_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔒"
+            android:textSize="64sp"
+            android:contentDescription="@string/lock" />
+
+        <TextView
+            android:id="@+id/lock_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vault is locked"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:textSize="22sp"
+            android:layout_marginTop="12dp" />
+
+        <TextView
+            android:id="@+id/lock_subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tap to unlock with biometrics"
+            android:textColor="#A0B0C0"
+            android:layout_marginTop="6dp" />
+
+        <TextView
+            android:id="@+id/btn_biometric"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unlock"
+            android:textStyle="bold"
+            android:textColor="#00BCD4"
+            android:padding="16dp"
+            android:layout_marginTop="20dp"
+            android:background="?attr/selectableItemBackgroundBorderless" />
+
+        <TextView
+            android:id="@+id/btn_use_pin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Use PIN instead"
+            android:textColor="#A0B0C0"
+            android:padding="8dp"
+            android:layout_marginTop="8dp" />
+    </LinearLayout>
+
+    <!-- PIN keypad (hidden by default) -->
+    <include
+        android:id="@+id/include_keypad"
+        layout="@layout/include_pin_keypad"
+        android:visibility="gone" />
+
+</FrameLayout>

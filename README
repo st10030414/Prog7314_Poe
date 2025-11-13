@@ -1,0 +1,49 @@
+YouTube Explainer Link-https://youtu.be/DpGqiopAihI
+
+Option 1: Clone with Git
+If Git is installed on your system, open a terminal and run the clone command available on the repository’s main page. Cloning ensures your local copy remains linked to the remote repository, allowing you to easily retrieve future updates using Git commands.
+
+Option 2: Download as a ZIP
+If you prefer not to use Git, select the green Code button on the repository page and choose Download ZIP. After the download completes, extract the contents of the archive to your preferred location on your computer.
+
+Reference List
+
+Android Developers. 2023. Guide to app architecture, 1 October 2025. [Online]. Available at: https://developer.android.com/topic/architecture [Accessed 7 October 2025].
+
+Android Developers. 2024a. LiveData overview, 10 February 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/livedata [Accessed 7 October 2025].
+
+Android Developers. 2024b. Save data in a local database using Room, 24 November 2025. [Online]. Available at: https://developer.android.com/training/data-storage/room [Accessed 7 October 2025].
+
+Android Developers. 2024c. Test your app, 10 February 2025. [Online]. Available at: https://developer.android.com/training/testing [Accessed 7 October 2025].
+
+Android Developers. 2024d. Use Kotlin coroutines in Android, 6 July 2024. [Online]. Available at: https://developer.android.com/kotlin/coroutines [Accessed 7 October 2025].
+
+Fowler, M. 2019. Patterns of enterprise application architecture. Boston, MA: Addison-Wesley.
+
+Google Developers. 2023. Android Architecture Components: Room, 24 November 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/room [Accessed 7 October 2025].
+
+Google Developers. 2024a. Material Design 3 Guidelines, [n.d.]. [Online]. Available at: https://m3.material.io [Accessed 7 October 2025].
+
+Google Developers. 2024b. Security best practices for data and credentials, 14 January 2025. [Online]. Available at: https://developer.android.com/topic/security [Accessed 7 October 2025].
+
+Google Firebase. 2024. Authenticate with Firebase on Android, 1 October 2025. [Online]. Available at: https://firebase.google.com/docs/auth/android/start [Accessed 7 October 2025].
+
+JUnit Team. 2023. JUnit 4: Testing framework, [n.d.]. [Online]. Available at: https://junit.org/junit4 [Accessed 7 October 2025].
+
+JetBrains. 2024. Kotlin programming language: Coroutines overview, 26 August 2025. [Online]. Available at: https://kotlinlang.org/docs/coroutines-overview.html [Accessed 7 October 2025].
+
+Karlsen, P. 2021. Unit testing with Kotlin coroutines, [n.d.]. [Blog]. Available at: https://medium.com/androiddevelopers [Accessed 7 October 2025].
+
+Mockito Team. 2023. Mockito framework documentation, [n.d.]. [Online]. Available at: https://site.mockito.org [Accessed 7 October 2025].
+
+Murat, Y. 2020. Room database and DAO pattern in Android, [n.d.]. [Blog]. Available at: https://medium.com/androiddevelopers [Accessed 7 October 2025].
+
+OWASP Foundation. 2023. Mobile Security Testing Guide (MSTG), [n.d.]. [Online]. Available at: https://owasp.org/www-project-mobile-security-testing-guide [Accessed 7 October 2025].
+
+Phillips, R. 2022. Mastering Kotlin for Android development. Birmingham: Packt Publishing.
+
+Pressman, R.S. and Maxim, B.R. 2020. Software engineering: A practitioner’s approach. 9th ed. New York, NY: McGraw-Hill Education.
+
+Sommerville, I. 2020. Software engineering. 11th ed. Boston, MA: Pearson Education.
+
+Zhang, H. 2020. Secure authentication flows with Firebase Auth [n.d.]. [Blog]. Available at: https://firebase.blog.google [Accessed 7 October 2025].

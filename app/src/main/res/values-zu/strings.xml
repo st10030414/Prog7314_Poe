@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Pocket Thoughts</string>
+    <string name="open_drawer">Vula ibhokisi lokuzulazula</string>
+    <string name="close_drawer">Vala ibhokisi lokuzulazula</string>
+
+    <string name="theme">Imodi emnyama</string>
+    <string name="language">Ulimi</string>
+    <string name="font">Usayizi wombhalo</string>
+    <string name="sort">Hlela amanothi nge</string>
+    <string name="username">Igama lomsebenzisi</string>
+    <string name="email">I-imeyili</string>
+    <string name="password">Iphasiwedi</string>
+    <string name="login_prompt">Usunayo i-akhawunti?</string>
+    <string name="login">Ngena ngemvume</string>
+    <string name="sign_prompt">Awunayo i-akhawunti?</string>
+    <string name="sign_up">Bhalisa</string>
+    <string name="title">Isihloko</string>
+    <string name="logout">Phuma</string>
+    <string name="note_prompt">Bhala inothi lakho lapha...</string>
+    <string name="change">Shintsha</string>
+    <string name="tag">Amathegi</string>
+    <string name="ai">Izenzo ze-AI</string>
+    <string name="back">Emuva</string>
+    <string name="option">Izinketho</string>
+    <string name="load">...</string>
+    <string name="hidden">********</string>
+    <string name="home">Ikhaya</string>
+    <string name="profile">Iphrofayela</string>
+    <string name="vault">Ibhokisi eliyimfihlo</string>
+    <string name="settings">Izilungiselelo</string>
+    <string name="login_sign">Ngena / Bhalisa</string>
+    <string name="sync">Hlanganisa</string>
+    <string name="add">Faka Okunye</string>
+    <string name="lock">Khiya</string>
+
+
+    <string-array name="tag_prompts">
+        <item>Lutho</item>
+        <item>Okuphuthumayo</item>
+        <item>Umsebenzi</item>
+        <item>Okomuntu siqu</item>
+    </string-array>
+
+    <string-array name="ai_prompts">
+        <item>Fingqa</item>
+        <item>Amaphuzu abalulekile</item>
+        <item>Umdali wesihloko</item>
+        <item>Shintsha ithoni</item>
+    </string-array>
+
+    <string-array name="language_prompts">
+        <item>IsiNgisi</item>
+        <item>IsiBhunu</item>
+        <item>IsiZulu</item>
+    </string-array>
+
+    <string-array name="font_prompts">
+        <item>Okuncane</item>
+        <item>Okuphakathi</item>
+        <item>Okukhulu</item>
+    </string-array>
+
+    <string-array name="sort_prompts">
+        <item>A–Z</item>
+        <item>Okusha kakhulu</item>
+        <item>Okudala kakhulu</item>
+    </string-array>
+</resources>

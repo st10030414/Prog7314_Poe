@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pin_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <!-- PIN dots -->
+    <LinearLayout
+        android:id="@+id/pin_dots"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="16dp">
+
+        <TextView style="@style/PinDot"/>
+        <TextView style="@style/PinDot" android:layout_marginStart="8dp"/>
+        <TextView style="@style/PinDot" android:layout_marginStart="8dp"/>
+        <TextView style="@style/PinDot" android:layout_marginStart="8dp"/>
+        <!-- Supports 4–6 digits visually if you add more -->
+    </LinearLayout>
+
+    <!-- Keypad -->
+    <GridLayout
+        android:id="@+id/pin_grid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="4"
+        android:layout_marginTop="24dp">
+
+        <!-- Row 1 -->
+        <TextView style="@style/PinKey" android:text="1"/>
+        <TextView style="@style/PinKey" android:text="2"/>
+        <TextView style="@style/PinKey" android:text="3"/>
+
+        <!-- Row 2 -->
+        <TextView style="@style/PinKey" android:text="4"/>
+        <TextView style="@style/PinKey" android:text="5"/>
+        <TextView style="@style/PinKey" android:text="6"/>
+
+        <!-- Row 3 -->
+        <TextView style="@style/PinKey" android:text="7"/>
+        <TextView style="@style/PinKey" android:text="8"/>
+        <TextView style="@style/PinKey" android:text="9"/>
+
+        <!-- Row 4 -->
+        <TextView style="@style/PinKey" android:text="⌫" android:id="@+id/key_backspace"/>
+        <TextView style="@style/PinKey" android:text="0"/>
+        <TextView style="@style/PinKey" android:text="OK" android:id="@+id/key_ok"/>
+    </GridLayout>
+
+    <TextView
+        android:id="@+id/keypad_hint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter your PIN"
+        android:textColor="#A0B0C0"
+        android:layout_marginTop="12dp"/>
+
+</LinearLayout>

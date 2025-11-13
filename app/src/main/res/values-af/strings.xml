@@ -1,0 +1,68 @@
+<resources>
+    <string name="app_name">Pocket Thoughts</string>
+    <string name="open_drawer">Maak navigasielaaier oop</string>
+    <string name="close_drawer">Maak navigasielaaier toe</string>
+
+    <string name="theme">Donker modus</string>
+    <string name="language">Taal</string>
+    <string name="font">Lettergrootte</string>
+    <string name="sort">Sorteer notas volgens</string>
+    <string name="username">Gebruikersnaam</string>
+    <string name="email">E-pos</string>
+    <string name="password">Wagwoord</string>
+    <string name="login_prompt">Het jy reeds ’n rekening?</string>
+    <string name="login">Meld aan</string>
+    <string name="sign_prompt">Het jy nie ’n rekening nie?</string>
+    <string name="sign_up">Registreer</string>
+    <string name="title">Titel</string>
+    <string name="note_prompt">Skryf jou nota hier...</string>
+    <string name="logout">Uitteken</string>
+    <string name="change">Verander</string>
+    <string name="tag">Etikette</string>
+    <string name="ai">KI-aksies</string>
+    <string name="back">Terug</string>
+    <string name="option">Opsies</string>
+    <string name="load">...</string>
+    <string name="hidden">********</string>
+    <string name="home">Tuis</string>
+    <string name="profile">Profiel</string>
+    <string name="vault">Kluis</string>
+    <string name="settings">Instellings</string>
+    <string name="login_sign">Meld aan / Registreer</string>
+    <string name="sync">Sinkroniseer</string>
+    <string name="add">Voeg</string>
+    <string name="lock">Slot</string>
+
+
+    <string-array name="tag_prompts">
+        <item>Geen</item>
+        <item>Dringend</item>
+        <item>Werk</item>
+        <item>Persoonlik</item>
+    </string-array>
+
+    <string-array name="ai_prompts">
+        <item>Som op</item>
+        <item>Sleutelpunte</item>
+        <item>Titelgenerator</item>
+        <item>Toonaanpassing</item>
+    </string-array>
+
+    <string-array name="language_prompts">
+        <item>Engels</item>
+        <item>Afrikaans</item>
+        <item>IsiZulu</item>
+    </string-array>
+
+    <string-array name="font_prompts">
+        <item>Klein</item>
+        <item>Medium</item>
+        <item>Groot</item>
+    </string-array>
+
+    <string-array name="sort_prompts">
+        <item>A–Z</item>
+        <item>Nuutste</item>
+        <item>Oudste</item>
+    </string-array>
+</resources>
