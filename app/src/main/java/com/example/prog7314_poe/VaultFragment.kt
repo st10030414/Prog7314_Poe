@@ -37,8 +37,10 @@ class VaultFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        // Gate access
-        gateAccess()
+        binding.root.post {
+            gateAccess()
+        }
+
 
         adapter = VaultNotesAdapter(
             onClick = { note -> showEditDialog(note) },
