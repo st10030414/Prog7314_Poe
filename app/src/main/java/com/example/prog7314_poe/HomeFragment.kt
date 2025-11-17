@@ -5,11 +5,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.prog7314_poe.Notes.AppDatabase
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.example.prog7314_poe.sync.NoteSyncManager // NEW IMPORT
 
 class HomeFragment : Fragment() {
 
@@ -42,6 +42,12 @@ class HomeFragment : Fragment() {
         observeNotes()
 
         return view
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // 🔥 NEW — Trigger offline → cloud sync whenever HomeFragment becomes visible
+        NoteSyncManager.syncNow(requireContext())
     }
 
     private fun observeNotes() {

@@ -61,9 +61,10 @@ dependencies {
     kapt("androidx.room:room-compiler:2.6.0")
     implementation("androidx.room:room-ktx:2.6.0")
 
-    // Firebase Auth (already added in your previous step)
+    // Firebase
     implementation(platform("com.google.firebase:firebase-bom:33.4.0"))
     implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("com.google.firebase:firebase-firestore-ktx:24.10.0")
 
     // Lifecycle/Coroutines (keep)
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.6")

@@ -8,26 +8,52 @@ import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
-    entities = [
-        Note::class,
-        VaultNote::class
-    ],
-    version = 2,              // bumped from 1 -> 2
+    entities = [Note::class, VaultNote::class],
+    version = 3,       // 🔥 NEW VERSION
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
 
     abstract fun noteDao(): NoteDao
-    abstract fun vaultDao(): VaultDao   // NEW
+    abstract fun vaultDao(): VaultDao
 
     companion object {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        // Migration 1 -> 2: create the vault_notes table
-        private val MIGRATION_1_2 = object : Migration(1, 2) {
-            override fun migrate(db: SupportSQLiteDatabase) {
-                db.execSQL(
+        // 🔥 NEW MIGRATION: from version 2 → 3
+        private val MIGRATION_2_3 = object : Migration(2, 3) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                // Add new columns with default values
+                database.execSQL("ALTER TABLE notes ADD COLUMN updatedAt INTEGER NOT NULL DEFAULT 0")
+                database.execSQL("ALTER TABLE notes ADD COLUMN pendingSync INTEGER NOT NULL DEFAULT 1")
+                database.execSQL("ALTER TABLE notes ADD COLUMN firebaseId TEXT")
+            }
+        }
+
+        fun getDatabase(context: Context): AppDatabase {
+            return INSTANCE ?: synchronized(this) {
+
+                val instance = Room.databaseBuilder(
+                    context.applicationContext,
+                    AppDatabase::class.java,
+                    "notes.db"
+                )
+                    .addMigrations(
+                        MIGRATION_1_2,
+                        MIGRATION_2_3     // 🔥 ADD MIGRATION
+                    )
+                    .build()
+
+                INSTANCE = instance
+                instance
+            }
+        }
+
+        // Old migration (already existed)
+        val MIGRATION_1_2 = object : Migration(1, 2) {
+            override fun migrate(database: SupportSQLiteDatabase) {
+                database.execSQL(
                     """
                     CREATE TABLE IF NOT EXISTS vault_notes(
                         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
@@ -37,22 +63,8 @@ abstract class AppDatabase : RoomDatabase() {
                         createdAt INTEGER NOT NULL,
                         updatedAt INTEGER NOT NULL
                     )
-                    """.trimIndent()
+                """
                 )
-            }
-        }
-
-        fun getDatabase(context: Context): AppDatabase {
-            return INSTANCE ?: synchronized(this) {
-                val instance = Room.databaseBuilder(
-                    context.applicationContext,
-                    AppDatabase::class.java,
-                    "notes.db"
-                )
-                    .addMigrations(MIGRATION_1_2) // keep user data; add vault table
-                    .build()
-                INSTANCE = instance
-                instance
             }
         }
     }

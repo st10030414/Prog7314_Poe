@@ -24,6 +24,7 @@ import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import androidx.work.*
 import com.example.prog7314_poe.Notification.DailyPromptWorker
+import com.example.prog7314_poe.sync.NoteSyncManager // NEW IMPORT
 import java.util.concurrent.TimeUnit
 import java.util.*
 
@@ -71,8 +72,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         createNotificationChannel(this)
 
+        // 🔥 NEW — make the network callback active
         registerNetworkCallback(this)
 
+        // Notification permission for Android 13+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) !=
                 android.content.pm.PackageManager.PERMISSION_GRANTED
@@ -159,23 +162,34 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         }
     }
 
+    // ✅ UPDATED — Now triggers NoteSyncManager on network regained
     fun registerNetworkCallback(context: Context) {
-        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val connectivityManager =
+            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
 
         val networkRequest = NetworkRequest.Builder()
             .addCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET)
             .build()
 
-        connectivityManager.registerNetworkCallback(networkRequest, object : ConnectivityManager.NetworkCallback() {
-            override fun onAvailable(network: Network) {
-                super.onAvailable(network)
-                sendNetworkRestoredNotification(context)
-            }
+        connectivityManager.registerNetworkCallback(
+            networkRequest,
+            object : ConnectivityManager.NetworkCallback() {
 
-            override fun onLost(network: Network) {
-                super.onLost(network)
+                override fun onAvailable(network: Network) {
+                    super.onAvailable(network)
+
+                    // 🔥 NEW: Trigger offline → cloud sync immediately
+                    NoteSyncManager.syncNow(context)
+
+                    // (Optional) Keep your notification
+                    sendNetworkRestoredNotification(context)
+                }
+
+                override fun onLost(network: Network) {
+                    super.onLost(network)
+                }
             }
-        })
+        )
     }
 
     fun sendNetworkRestoredNotification(context: Context) {
@@ -204,12 +218,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         grantResults: IntArray
     ) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
-        if (requestCode == 101) {
-            if ((grantResults.isNotEmpty() && grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED)) {
-            }
-        }
     }
-
 
     fun scheduleDailyPrompt(context: Context) {
         val currentTime = Calendar.getInstance()
@@ -219,14 +228,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             set(Calendar.SECOND, 0)
         }
 
-        // Schedule for next 1pm
         if (dueTime.before(currentTime)) {
             dueTime.add(Calendar.DAY_OF_MONTH, 1)
         }
 
         val initialDelay = dueTime.timeInMillis - currentTime.timeInMillis
 
-        // Repeats every 24 hours
         val dailyWork = PeriodicWorkRequestBuilder<DailyPromptWorker>(24, TimeUnit.HOURS)
             .setInitialDelay(initialDelay, TimeUnit.MILLISECONDS)
             .build()
@@ -237,6 +244,4 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
             dailyWork
         )
     }
-
-
 }

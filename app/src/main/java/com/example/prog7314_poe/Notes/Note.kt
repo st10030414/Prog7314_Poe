@@ -6,7 +6,10 @@ import androidx.room.PrimaryKey
 @Entity(tableName = "notes")
 data class Note(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
-    val title: String? = null,
+    val title: String?,
     val content: String,
-    val tags: String? = null
+    val tags: String?,
+    val updatedAt: Long = System.currentTimeMillis(),   // NEW
+    val pendingSync: Boolean = true,                    // NEW
+    val firebaseId: String? = null                      // NEW
 )
