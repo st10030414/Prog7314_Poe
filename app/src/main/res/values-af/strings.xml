@@ -32,6 +32,8 @@
     <string name="sync">Sinkroniseer</string>
     <string name="add">Voeg</string>
     <string name="lock">Slot</string>
+    <string name="currentpass">Huidige Wagwoord</string>
+    <string name="newpass">Nuwe Wagwoord</string>
 
 
     <string-array name="tag_prompts">

@@ -32,6 +32,8 @@
     <string name="sync">Hlanganisa</string>
     <string name="add">Faka Okunye</string>
     <string name="lock">Khiya</string>
+    <string name="currentpass">I-password Yamanje</string>
+    <string name="newpass">Iphasiwedi Entsha</string>
 
 
     <string-array name="tag_prompts">

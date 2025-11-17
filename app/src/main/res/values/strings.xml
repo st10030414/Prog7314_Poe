@@ -32,6 +32,8 @@
     <string name="sync">Sync</string>
     <string name="add">Add</string>
     <string name="lock">Lock</string>
+    <string name="currentpass">Current Password</string>
+    <string name="newpass">New Password</string>
 
     <string-array name="tag_prompts">
         <item>None</item>
