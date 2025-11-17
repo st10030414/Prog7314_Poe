@@ -19,8 +19,4 @@ open class AuthRepository(
         auth.createUserWithEmailAndPassword(email.trim(), password).await()
 
     open fun signOut() = auth.signOut()
-
-    open fun getCurrentUserEmail(): String? {
-        return auth.currentUser?.email
-    }
 }
