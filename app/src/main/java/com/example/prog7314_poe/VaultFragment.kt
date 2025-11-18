@@ -27,29 +27,29 @@ class VaultFragment : Fragment() {
 
     private val vm: VaultViewModel by viewModels()
     private lateinit var adapter: VaultNotesAdapter
-
+    //(Developer Android, 2025).
     private var unlocked = false
+    //(Developer Android, 2025).
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        // Use ViewBinding for convenience (enable in Gradle if not already).
         _binding = FragmentVaultBinding.inflate(inflater, container, false)
         return binding.root
     }
-
+    //(Developer Android, 2025).
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.root.post {
             gateAccess()
         }
-
+        //(Developer Android, 2025).
 
         adapter = VaultNotesAdapter(
             onClick = { note -> showEditDialog(note) },
             onLongPress = { note, anchor -> showItemMenu(note, anchor) }
         )
-
+        //(Developer Android, 2025).
         binding.recyclerVault.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerVault.adapter = adapter
-
+        //(Developer Android, 2025).
         binding.fabAddSecure.setOnClickListener {
             if (!unlocked) {
                 Snackbar.make(view, "Unlock vault first", Snackbar.LENGTH_SHORT).show()
@@ -57,13 +57,14 @@ class VaultFragment : Fragment() {
                 showAddDialog()
             }
         }
-
+        //(Developer Android, 2025).
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             vm.notes.collectLatest { items ->
                 binding.recyclerVault.isVisible = unlocked
                 if (unlocked) adapter.submitList(items)
             }
         }
+        //(Developer Android, 2025).
     }
 
     private fun gateAccess() {
@@ -76,7 +77,6 @@ class VaultFragment : Fragment() {
                     Snackbar.make(binding.root, "Vault unlocked", Snackbar.LENGTH_SHORT).show()
                 }
                 override fun onFailed(errMsg: String) {
-                    // fallback to PIN
                     promptPin()
                 }
                 override fun onUnavailable() {
@@ -86,12 +86,12 @@ class VaultFragment : Fragment() {
         } else {
             promptPin()
         }
+        //(Developer Android, 2025).
     }
 
     private fun promptPin() {
         val current = SecurePrefs.getPin(requireContext())
         if (current == null) {
-            // set new PIN
             val input = EditText(requireContext()).apply {
                 inputType = InputType.TYPE_CLASS_NUMBER or InputType.TYPE_NUMBER_VARIATION_PASSWORD
                 hint = "Set a 4-6 digit PIN"
@@ -188,3 +188,40 @@ class VaultFragment : Fragment() {
         _binding = null
     }
 }
+/*
+Reference List
+
+Developer Android. 2025. Fragments, 10 February 2025. [Online]. Available at: https://developer.android.com/guide/fragments [Accessed 15 November 2025].
+
+Developer Android. 2025. Save data in a local database using Room, 29 October 2025. [Online]. Available at: https://developer.android.com/training/data-storage/room [Accessed 15 November 2025].
+
+Developer Android. 2025. Accessing data using Room DAOs, 10 February 2025. [Online]. Available at: https://developer.android.com/training/data-storage/room/accessing-data [Accessed 15 November 2025].
+
+Developer Android. 2025. ViewModel overview, 3 September 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/viewmodel [Accessed 15 November 2025].
+
+Developer Android. 2025. LiveData overview, 10 February 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/livedata#observe_livedata_objects [Accessed 15 November 2025].
+
+Developer Android. 2025. Task scheduling, 8 September 2025. [Online]. Available at: https://developer.android.com/develop/background-work/background-tasks/persistent [Accessed 15 November 2025].
+
+Developer Android. 2025. Navigation, 5 November 2025. [Online]. Available at: https://developer.android.com/guide/navigation [Accessed 15 November 2025].
+
+Developer Android. 2025. ConstraintLayout, 17 July 2025. [Online]. Available at: https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout [Accessed 15 November 2025].
+
+Developer Android. 2025. Spinner, 17 September 2025. [Online]. Available at: https://developer.android.com/reference/android/widget/Spinner [Accessed 15 November 2025].
+
+Developer Android. 2025. RecyclerView.Adapter, 15 May 2025. [Online]. Available at: https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter [Accessed 15 November 2025].
+
+Developer Android. 2025. Add a floating action button, 30 October 2025. [Online]. Available at: https://developer.android.com/develop/ui/views/components/floating-action-button [Accessed 15 November 2025].
+
+Developer Android. 2025. Better performance through threading, 3 January 2024. [Online]. Available at: https://developer.android.com/topic/performance/threads [Accessed 15 November 2025].
+
+Developer Android. 2025. Kotlin coroutines on Android, 6 July 2024. [Online]. Available at: https://developer.android.com/kotlin/coroutines [Accessed 15 November 2025].
+
+Firebase. 2025. Firebase Authentication, 20 October 2025. [Online]. Available at: https://firebase.google.com/docs/auth [Accessed 15 November 2025].
+
+Firebase. 2025. Get Started with Firebase Authentication on Android, 14 November 2025. [Online]. Available at: https://firebase.google.com/docs/auth/android/start [Accessed 15 November 2025].
+
+Firebase. 2025. Cloud Firestore, 14 November 2025. [Online]. Available at: https://firebase.google.com/docs/firestore [Accessed 15 November 2025].
+
+Client authentication. 2025. 14 November 2025. [Online]. Available at: https://developers.google.com/android/guides/client-auth [Accessed 15 November 2025].
+ */

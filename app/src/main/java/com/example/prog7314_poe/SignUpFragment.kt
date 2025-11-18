@@ -28,7 +28,7 @@ class SignUpFragment : Fragment() {
     private lateinit var editConfirmPassword: EditText
     private lateinit var buttonSignUp: Button
     private lateinit var progress: ProgressBar
-
+    //(Developer Android, 2025).
     private val vm: AuthViewModel by viewModels()
 
     override fun onCreateView(
@@ -38,13 +38,13 @@ class SignUpFragment : Fragment() {
 
         title = view.findViewById(R.id.title_signup)
         prompt = view.findViewById(R.id.prompt)
-        loginLink = view.findViewById(R.id.signUpBtn) // “Login” link in this screen
+        loginLink = view.findViewById(R.id.signUpBtn)
         editEmail = view.findViewById(R.id.edit_email)
         editPassword = view.findViewById(R.id.edit_password)
         editConfirmPassword = view.findViewById(R.id.edit_confirm_password)
         buttonSignUp = view.findViewById(R.id.button_sign_up)
         progress = view.findViewById(R.id.progress)
-
+        //(Developer Android, 2025).
         loginLink.setOnClickListener { parentFragmentManager.popBackStack() }
 
         buttonSignUp.setOnClickListener {
@@ -61,7 +61,7 @@ class SignUpFragment : Fragment() {
                 else -> vm.signUp(email, p1)
             }
         }
-
+        //(Developer Android, 2025).
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
             vm.state.collectLatest { state ->
                 when (state) {
@@ -81,6 +81,7 @@ class SignUpFragment : Fragment() {
                     }
                 }
             }
+            //(Developer Android, 2025).
         }
 
         applyFontSizes()
@@ -91,7 +92,7 @@ class SignUpFragment : Fragment() {
         super.onResume()
         applyFontSizes()
     }
-
+    //(Developer Android, 2025).
     private fun applyFontSizes() {
         title.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utility.getFontDimen(requireContext(), "title"))
         prompt.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utility.getFontDimen(requireContext(), "body"))
@@ -101,4 +102,42 @@ class SignUpFragment : Fragment() {
         editConfirmPassword.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utility.getFontDimen(requireContext(), "body"))
         buttonSignUp.setTextSize(TypedValue.COMPLEX_UNIT_PX, Utility.getFontDimen(requireContext(), "body"))
     }
+    //(Developer Android, 2025).
 }
+/*
+Reference List
+
+Developer Android. 2025. Fragments, 10 February 2025. [Online]. Available at: https://developer.android.com/guide/fragments [Accessed 15 November 2025].
+
+Developer Android. 2025. Save data in a local database using Room, 29 October 2025. [Online]. Available at: https://developer.android.com/training/data-storage/room [Accessed 15 November 2025].
+
+Developer Android. 2025. Accessing data using Room DAOs, 10 February 2025. [Online]. Available at: https://developer.android.com/training/data-storage/room/accessing-data [Accessed 15 November 2025].
+
+Developer Android. 2025. ViewModel overview, 3 September 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/viewmodel [Accessed 15 November 2025].
+
+Developer Android. 2025. LiveData overview, 10 February 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/livedata#observe_livedata_objects [Accessed 15 November 2025].
+
+Developer Android. 2025. Task scheduling, 8 September 2025. [Online]. Available at: https://developer.android.com/develop/background-work/background-tasks/persistent [Accessed 15 November 2025].
+
+Developer Android. 2025. Navigation, 5 November 2025. [Online]. Available at: https://developer.android.com/guide/navigation [Accessed 15 November 2025].
+
+Developer Android. 2025. ConstraintLayout, 17 July 2025. [Online]. Available at: https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout [Accessed 15 November 2025].
+
+Developer Android. 2025. Spinner, 17 September 2025. [Online]. Available at: https://developer.android.com/reference/android/widget/Spinner [Accessed 15 November 2025].
+
+Developer Android. 2025. RecyclerView.Adapter, 15 May 2025. [Online]. Available at: https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter [Accessed 15 November 2025].
+
+Developer Android. 2025. Add a floating action button, 30 October 2025. [Online]. Available at: https://developer.android.com/develop/ui/views/components/floating-action-button [Accessed 15 November 2025].
+
+Developer Android. 2025. Better performance through threading, 3 January 2024. [Online]. Available at: https://developer.android.com/topic/performance/threads [Accessed 15 November 2025].
+
+Developer Android. 2025. Kotlin coroutines on Android, 6 July 2024. [Online]. Available at: https://developer.android.com/kotlin/coroutines [Accessed 15 November 2025].
+
+Firebase. 2025. Firebase Authentication, 20 October 2025. [Online]. Available at: https://firebase.google.com/docs/auth [Accessed 15 November 2025].
+
+Firebase. 2025. Get Started with Firebase Authentication on Android, 14 November 2025. [Online]. Available at: https://firebase.google.com/docs/auth/android/start [Accessed 15 November 2025].
+
+Firebase. 2025. Cloud Firestore, 14 November 2025. [Online]. Available at: https://firebase.google.com/docs/firestore [Accessed 15 November 2025].
+
+Client authentication. 2025. 14 November 2025. [Online]. Available at: https://developers.google.com/android/guides/client-auth [Accessed 15 November 2025].
+ */

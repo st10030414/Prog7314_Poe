@@ -6,7 +6,6 @@
     android:gravity="center_horizontal"
     android:orientation="vertical">
 
-    <!-- PIN dots -->
     <LinearLayout
         android:id="@+id/pin_dots"
         android:layout_width="wrap_content"
@@ -18,10 +17,8 @@
         <TextView style="@style/PinDot" android:layout_marginStart="8dp"/>
         <TextView style="@style/PinDot" android:layout_marginStart="8dp"/>
         <TextView style="@style/PinDot" android:layout_marginStart="8dp"/>
-        <!-- Supports 4–6 digits visually if you add more -->
     </LinearLayout>
-
-    <!-- Keypad -->
+    <!--(Developer Android, 2025).-->
     <GridLayout
         android:id="@+id/pin_grid"
         android:layout_width="wrap_content"
@@ -30,27 +27,23 @@
         android:rowCount="4"
         android:layout_marginTop="24dp">
 
-        <!-- Row 1 -->
         <TextView style="@style/PinKey" android:text="1"/>
         <TextView style="@style/PinKey" android:text="2"/>
         <TextView style="@style/PinKey" android:text="3"/>
-
-        <!-- Row 2 -->
+        <!--(Developer Android, 2025).-->
         <TextView style="@style/PinKey" android:text="4"/>
         <TextView style="@style/PinKey" android:text="5"/>
         <TextView style="@style/PinKey" android:text="6"/>
-
-        <!-- Row 3 -->
+        <!--(Developer Android, 2025).-->
         <TextView style="@style/PinKey" android:text="7"/>
         <TextView style="@style/PinKey" android:text="8"/>
         <TextView style="@style/PinKey" android:text="9"/>
-
-        <!-- Row 4 -->
+        <!--(Developer Android, 2025).-->
         <TextView style="@style/PinKey" android:text="⌫" android:id="@+id/key_backspace"/>
         <TextView style="@style/PinKey" android:text="0"/>
         <TextView style="@style/PinKey" android:text="OK" android:id="@+id/key_ok"/>
     </GridLayout>
-
+    <!--(Developer Android, 2025).-->
     <TextView
         android:id="@+id/keypad_hint"
         android:layout_width="wrap_content"
@@ -58,5 +51,42 @@
         android:text="Enter your PIN"
         android:textColor="#A0B0C0"
         android:layout_marginTop="12dp"/>
-
+    <!--(Developer Android, 2025).-->
 </LinearLayout>
+    <!--
+    Reference List
+
+    Developer Android. 2025. Fragments, 10 February 2025. [Online]. Available at: https://developer.android.com/guide/fragments [Accessed 15 November 2025].
+
+    Developer Android. 2025. Save data in a local database using Room, 29 October 2025. [Online]. Available at: https://developer.android.com/training/data-storage/room [Accessed 15 November 2025].
+
+    Developer Android. 2025. Accessing data using Room DAOs, 10 February 2025. [Online]. Available at: https://developer.android.com/training/data-storage/room/accessing-data [Accessed 15 November 2025].
+
+    Developer Android. 2025. ViewModel overview, 3 September 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/viewmodel [Accessed 15 November 2025].
+
+    Developer Android. 2025. LiveData overview, 10 February 2025. [Online]. Available at: https://developer.android.com/topic/libraries/architecture/livedata#observe_livedata_objects [Accessed 15 November 2025].
+
+    Developer Android. 2025. Task scheduling, 8 September 2025. [Online]. Available at: https://developer.android.com/develop/background-work/background-tasks/persistent [Accessed 15 November 2025].
+
+    Developer Android. 2025. Navigation, 5 November 2025. [Online]. Available at: https://developer.android.com/guide/navigation [Accessed 15 November 2025].
+
+    Developer Android. 2025. ConstraintLayout, 17 July 2025. [Online]. Available at: https://developer.android.com/reference/androidx/constraintlayout/widget/ConstraintLayout [Accessed 15 November 2025].
+
+    Developer Android. 2025. Spinner, 17 September 2025. [Online]. Available at: https://developer.android.com/reference/android/widget/Spinner [Accessed 15 November 2025].
+
+    Developer Android. 2025. RecyclerView.Adapter, 15 May 2025. [Online]. Available at: https://developer.android.com/reference/androidx/recyclerview/widget/RecyclerView.Adapter [Accessed 15 November 2025].
+
+    Developer Android. 2025. Add a floating action button, 30 October 2025. [Online]. Available at: https://developer.android.com/develop/ui/views/components/floating-action-button [Accessed 15 November 2025].
+
+    Developer Android. 2025. Better performance through threading, 3 January 2024. [Online]. Available at: https://developer.android.com/topic/performance/threads [Accessed 15 November 2025].
+
+    Developer Android. 2025. Kotlin coroutines on Android, 6 July 2024. [Online]. Available at: https://developer.android.com/kotlin/coroutines [Accessed 15 November 2025].
+
+    Firebase. 2025. Firebase Authentication, 20 October 2025. [Online]. Available at: https://firebase.google.com/docs/auth [Accessed 15 November 2025].
+
+    Firebase. 2025. Get Started with Firebase Authentication on Android, 14 November 2025. [Online]. Available at: https://firebase.google.com/docs/auth/android/start [Accessed 15 November 2025].
+
+    Firebase. 2025. Cloud Firestore, 14 November 2025. [Online]. Available at: https://firebase.google.com/docs/firestore [Accessed 15 November 2025].
+
+    Client authentication. 2025. 14 November 2025. [Online]. Available at: https://developers.google.com/android/guides/client-auth [Accessed 15 November 2025].
+    -->
