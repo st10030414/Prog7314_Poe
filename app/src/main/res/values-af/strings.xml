@@ -34,6 +34,7 @@
     <string name="lock">Slot</string>
     <string name="currentpass">Huidige Wagwoord</string>
     <string name="newpass">Nuwe Wagwoord</string>
+    <string name="offline_mode">Vanlynmodus</string>
 
 
     <string-array name="tag_prompts">

@@ -9,7 +9,7 @@ import androidx.sqlite.db.SupportSQLiteDatabase
 
 @Database(
     entities = [Note::class, VaultNote::class],
-    version = 3,       // 🔥 NEW VERSION
+    version = 3,
     exportSchema = false
 )
 abstract class AppDatabase : RoomDatabase() {
@@ -21,10 +21,8 @@ abstract class AppDatabase : RoomDatabase() {
         @Volatile
         private var INSTANCE: AppDatabase? = null
 
-        // 🔥 NEW MIGRATION: from version 2 → 3
         private val MIGRATION_2_3 = object : Migration(2, 3) {
             override fun migrate(database: SupportSQLiteDatabase) {
-                // Add new columns with default values
                 database.execSQL("ALTER TABLE notes ADD COLUMN updatedAt INTEGER NOT NULL DEFAULT 0")
                 database.execSQL("ALTER TABLE notes ADD COLUMN pendingSync INTEGER NOT NULL DEFAULT 1")
                 database.execSQL("ALTER TABLE notes ADD COLUMN firebaseId TEXT")
@@ -41,7 +39,7 @@ abstract class AppDatabase : RoomDatabase() {
                 )
                     .addMigrations(
                         MIGRATION_1_2,
-                        MIGRATION_2_3     // 🔥 ADD MIGRATION
+                        MIGRATION_2_3
                     )
                     .build()
 
@@ -50,7 +48,6 @@ abstract class AppDatabase : RoomDatabase() {
             }
         }
 
-        // Old migration (already existed)
         val MIGRATION_1_2 = object : Migration(1, 2) {
             override fun migrate(database: SupportSQLiteDatabase) {
                 database.execSQL(

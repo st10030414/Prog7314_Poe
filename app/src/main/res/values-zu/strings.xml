@@ -34,6 +34,7 @@
     <string name="lock">Khiya</string>
     <string name="currentpass">I-password Yamanje</string>
     <string name="newpass">Iphasiwedi Entsha</string>
+    <string name="offline_mode">Imodi Engaxhunyiwe Ku-inthanethi</string>
 
 
     <string-array name="tag_prompts">

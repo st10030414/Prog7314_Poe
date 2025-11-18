@@ -9,7 +9,7 @@ data class Note(
     val title: String?,
     val content: String,
     val tags: String?,
-    val updatedAt: Long = System.currentTimeMillis(),   // NEW
-    val pendingSync: Boolean = true,                    // NEW
-    val firebaseId: String? = null                      // NEW
+    val updatedAt: Long = System.currentTimeMillis(),
+    val pendingSync: Boolean = true,
+    val firebaseId: String? = null
 )

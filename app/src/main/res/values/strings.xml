@@ -34,6 +34,7 @@
     <string name="lock">Lock</string>
     <string name="currentpass">Current Password</string>
     <string name="newpass">New Password</string>
+    <string name="offline_mode">Offline Mode</string>
 
     <string-array name="tag_prompts">
         <item>None</item>

@@ -13,6 +13,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.example.prog7314_poe.Session.AppSession
 import com.example.prog7314_poe.auth.AuthUiState
 import com.example.prog7314_poe.auth.AuthViewModel
 import com.google.android.material.snackbar.Snackbar
@@ -33,6 +34,7 @@ class LoginFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
+        val offlineBtn = view.findViewById<TextView>(R.id.offlineBtn)
         title = view.findViewById(R.id.title)
         prompt = view.findViewById(R.id.prompt)
         signUpBtn = view.findViewById(R.id.signUpBtn)
@@ -56,6 +58,15 @@ class LoginFragment : Fragment() {
             } else {
                 vm.signIn(email, pass)
             }
+        }
+
+        offlineBtn.setOnClickListener {
+            AppSession.isOffline = true
+            (requireActivity() as MainActivity).setDrawerLocked(true)
+
+            parentFragmentManager.beginTransaction()
+                .replace(R.id.content_frame, OfflineHomeFragment())
+                .commit()
         }
 
         viewLifecycleOwner.lifecycleScope.launchWhenStarted {
