@@ -1,0 +1,129 @@
+YouTube Link:  https://youtu.be/YtcQ8o71jPk
+GitHub Link:   https://github.com/st10030414/Prog7314_Poe.git
+GitHub Link:   https://github.com/VCPTA/bca3-prog7314-poe-submission-st10030414.git
+
+How to Use & Install the App:
+1. 	Install Android Studio
+	Download the latest version (Ladybug or newer)
+	Install with standard configuration
+	
+2.	Download the Project From GitHub
+	Open Android Studio
+	Click “Get from VCS” (Version Control)
+	Paste your GitHub repository URL
+	Choose a folder to save the project
+	Click Clone
+
+3.	Wait for Gradle to Finish Syncing
+	Android Studio will download:
+	Dependencies
+	Plugins
+	Kotlin & Jetpack components
+	Do not run the app until Gradle is fully complete.
+
+4.	Choose a Device to Run the App
+	Connect a physical device
+	or
+	Use an emulator with API Level 33 or higher
+
+5.	Run the App
+	Click Run, and PocketThoughts will launch.
+
+
+
+🎯 Purpose of the App
+
+PocketThoughts is designed to be:
+- A secure note-taking tool
+- Usable online and offline
+- Safe for sensitive information using the Vault
+- Fully functional for students, professionals, and general users
+- A platform showing strong knowledge of Android architecture, security, and modern UI experience
+
+
+
+🧩 User-Defined Features
+⭐ Feature: Rich Note Editor
+Users can format notes using:
+- Bold
+- Italic
+- Underline
+- Bullet lists
+
+This makes PocketThoughts more advanced than a standard note app and improves usability for detailed or structured writing.
+
+⭐ Feature: Dark Mode Support
+The app provides a complete Dark Mode theme that:
+- Improves readability at night
+- Reduces eye strain
+- Matches system settings
+- Enhances UI consistency across devices
+
+
+
+Use of AI in the App
+
+The application integrates AI in the following ways:
+Language Translation (strings.xml)
+We used AI to translate the app’s user-facing text into multiple languages to support accessibility and international use.
+
+
+
+🛠 How the App Was Prepared for Play Store Publishing
+The app is fully structured to meet Google Play Console requirements.
+
+1. 	Unique Application ID (com.example.prog7314_poe)
+2.	Versioning, implemented inside buildgradle (versionCode 1, versionName "1.0")
+	These are required for Play Store uploads and future updates.
+3.	Signing Configurations. A release keystore was generated and configured: app → Build → Generate Signed App Bundle
+4.	App Bundle Generation (AAB):
+	Steps followed:
+	Go to
+	Build → Generate Signed Bundle / APK
+	Select Android App Bundle (.aab)
+	Choose the keystore (created earlier)
+	Generate the signed Play Store–ready bundle
+
+
+
+📝 Release Notes (Version 1.0)
+
+New Features
+Secure note storage using Room + Firebase
+Vault system with PIN protection
+Offline sync support
+Modern UI and adaptive icons
+Rich text note editor
+Dark mode support
+Language translation supported through AI
+Sorting options for note organisation
+Performance Improvements
+Faster loading of notes
+Reduced fragment lifecycle crashes
+Improved RecyclerView performance
+Security Enhancements
+Back-stack cleared on logout
+More secure Room & Firebase communication
+Biometrics & PIN-protected Vault 
+
+
+
+📦 Is the App Ready for the Play Store?
+
+Yes. PocketThoughts was prepared with:
+Signed release keystore
+Play Store compliant AAB bundle
+Adaptive launcher icons
+Scoped storage usage
+Min/Target SDK alignment
+Secure login system
+Clean navigation preventing unauthorized access
+Release build with no debugging traces
+Proper resource structure and optimized icons
+The project is technically ready for publishing once privacy policy + app listing are completed.
+
+
+
+
+
+
